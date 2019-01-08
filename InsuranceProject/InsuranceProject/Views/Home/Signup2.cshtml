@@ -1,0 +1,73 @@
+﻿
+<div class="jumbotron">
+    <h2>Get an Insurance Quote</h2>
+    <p>Getting an insurance quote is easy! Just fill out the form below and we'll provide you an estimated cost of insurance at the click of a button.</p>
+</div>
+
+<div>
+    <div class="row no-gutters m-3 ">
+        <div class="card mx-auto shadow">
+            <div class="card-header text-center">
+                <h3 class="m-0"> Insurance Quote Form</h3>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("Signup", "Home", FormMethod.Post))
+                {
+                    <div class="row col-lg-12 no-gutters center-block">
+                        <div class="form-group col-md-4">
+                            <input name="FirstName" type="text" class="form-control" placeholder="First Name" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input name="LastName" type="text" class="form-control" placeholder="Last Name" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input name="DOB" type="date" class="form-control" placeholder="Email Address" />
+                        </div>
+                    </div>
+                    <div class="row col-lg-12 no-gutters center-block">
+
+                        <div class="form-group col-md-4">
+                            <input name="CarYear" type="text" class="form-control" placeholder="Car Year" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input name="CarMake" type="text" class="form-control" placeholder="Car Make" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input name="CarModel" type="text" class="form-control" placeholder="Car Model" />
+                        </div>
+                    </div>
+                    <div class="row col-lg-12 no-gutters center-block">
+                        <div class="form-group col-md-4">
+                            <input name="NumOfTickets" type="text" class="form-control" placeholder="Number of speeding tickets" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Have you ever had a DUI?</label>
+                            </div>
+                            <select name="DUI" class="custom-select" id="inputGroupSelect01">
+                                <option selected>Choose...</option>
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">What type of coverage would you like?</label>
+                            </div>
+                            <select name="CoverageType" class="custom-select" id="inputGroupSelect01">
+                                <option selected>Choose...</option>
+                                <option value="Full">Full</option>
+                                <option value="Liability">Liability</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <button type="submit" class="btn btn-block btn-primary">Submit</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

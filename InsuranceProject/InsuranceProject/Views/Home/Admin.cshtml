@@ -1,0 +1,53 @@
+﻿@using InsuranceProject.ViewModels
+@model List<SubscribersVM>
+
+<div class="text-center">
+    <h4>Subscription Requests and Quotes</h4>
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" class="text-center">Id</th>
+            <th scope="col" class="text-center">First Name</th>
+            <th scope="col"class="text-center">Last Name</th>
+            <th scope="col" class="text-center">DOB</th>
+            <th scope="col"class="text-center">Car Year</th>
+            <th scope="col"class="text-center">Car Model</th>
+            <th scope="col"class="text-center">Car Make</th>
+            <th scope="col"class="text-center">Number of Tickets</th>
+            <th scope="col"class="text-center">DUI</th>
+            <th scope="col"class="text-center">Coverage Type</th>
+            <th scope="col"class="text-center">Quote</th>
+            <th scope="col"class="text-center">Remove?</th>
+         </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var subscriber in Model)
+        {
+            using (Html.BeginForm("Remove", "Home", FormMethod.Post))
+            {
+                <tr>
+                    <td class="text-center"><input class="hidden" name="Id" value="@subscriber.Id" /></td>
+                    <td class="text-center">@subscriber.FirstName</td>
+                    <td class="text-center">@subscriber.LastName</td>
+                    <td class="text-center">@subscriber.DOB</td>
+                    <td class="text-center">@subscriber.CarYear</td>
+                    <td class="text-center">@subscriber.CarMake</td>
+                    <td class="text-center">@subscriber.CarModel</td>
+                    <td class="text-center">@subscriber.NumOfTickets</td>
+                    <td class="text-center">@subscriber.DUI</td>
+                    <td class="text-center">@subscriber.CoverageType</td>
+                    <td class="text-center">@subscriber.Quote</td>
+                    <td>
+                        <button type="submit" class="btn btn-danger btn-block">Remove</button>
+                    </td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>
+
+
